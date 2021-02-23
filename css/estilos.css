@@ -1,0 +1,147 @@
+:root {
+    --primary-color : hsl(257, 40%, 49%)
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-color);
+    background-image: url('./images/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+}
+
+.header__container {
+    padding: 30px;
+}
+
+.header__container img {
+    width: 200px;
+}
+
+.main__container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__img img {
+    width: 100%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.main__content {
+    color: white;
+    text-align: center;
+    font-family: 1rem;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+.main__content h1 {
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main__content p {
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
+    font-size: 1em;
+}
+
+.main__button {
+    background-color: white;
+    border-radius: 30px; 
+    border: none;
+    padding: 15px 80px;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+    color: var(--primary-color);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.05em;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.main__button:hover{
+    color: white;
+    background-color: #a44fca;
+}
+
+footer {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.footer__social-links {
+    width: fit-content;
+    display: flex;
+}
+.footer__social-links a {
+    color: white;
+    border: 1px solid white;
+    margin: 10px;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center; 
+}
+
+a:hover{
+    border: 1px solid #a44fca;
+    color: #a44fca;
+}
+i:hover{
+    color: #a44fca;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* RESPONSIVE  */
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url('../images/bg-desktop.svg');
+        background-size: cover;
+    }
+    .main__container {
+        flex-direction: row;
+        padding: 50px;
+    }
+
+    .main__img {
+        width: 55%;
+    }
+    .main__content {
+        width: calc(45% - 40px);
+        margin-left: 40px;
+        text-align: left;
+        font-size: 1.1rem;
+    }
+    .main__content h1, .main__content p {
+        text-align: left;
+    }
+
+    footer {
+        justify-content: flex-end;
+    }
+}
